@@ -302,7 +302,7 @@ button:disabled {
   overflow-y: auto;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   body {
     font-family: Arial, Helvetica, sans-serif;
     background: #fdd835;
@@ -917,7 +917,7 @@ input[type="checkbox"] {
 }
 
 /* --- Adaptaciones responsivas --- */
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   #assistant-panel {
     max-height: none;
   }
