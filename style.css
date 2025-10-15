@@ -10,6 +10,7 @@
   --muted: #5a6b7b;
   --card-radius: 44px;
   --card-shadow: 0 24px 48px rgba(0, 0, 0, 0.16);
+  --layout-mode: mobile;
   font-size: 16px;
 }
 
@@ -30,6 +31,24 @@ body {
   color: var(--text-color);
   display: flex;
   justify-content: center;
+}
+
+.layout-chip {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+  padding: 8px 12px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: pre-line;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
 }
 
 #app {
@@ -303,6 +322,10 @@ button:disabled {
 }
 
 @media (min-width: 768px) {
+  :root {
+    --layout-mode: desktop;
+  }
+
   body {
     font-family: Arial, Helvetica, sans-serif;
     background: #fdd835;
