@@ -338,6 +338,8 @@ button:disabled {
 
   .screen {
     padding: 48px 64px;
+    max-width: 1100px;
+    margin: 0 auto;
   }
 
   #home-screen {
@@ -394,6 +396,138 @@ button:disabled {
 
   .home-bottom-actions {
     display: none;
+  }
+
+  #config-screen,
+  #learning-screen,
+  #training-screen,
+  #tables-screen,
+  #progress-screen {
+    align-items: center;
+    gap: 32px;
+  }
+
+  .config-body {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+
+  .config-section {
+    flex: 1 1 320px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px 24px;
+    border-radius: 22px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .mode-options {
+    gap: 16px;
+  }
+
+  .mode-options label {
+    font-size: 16px;
+    padding: 12px 18px;
+  }
+
+  .interval-inputs {
+    gap: 16px;
+  }
+
+  input[type="number"],
+  select {
+    font-size: 18px;
+    padding: 14px 16px;
+  }
+
+  .config-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 18px;
+  }
+
+  #config-save-btn,
+  #reset-progress-btn {
+    width: auto;
+    min-width: 220px;
+    padding: 18px 32px;
+  }
+
+  .problem-card {
+    max-width: 520px;
+    margin: 0 0 32px;
+    padding: 42px 48px;
+  }
+
+  .card-front {
+    min-height: 220px;
+    gap: 18px;
+  }
+
+  .stars {
+    font-size: 26px;
+    gap: 10px;
+  }
+
+  .problem {
+    font-size: 64px;
+  }
+
+  .answer-area {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .answer-option,
+  .numeric-display {
+    max-width: 400px;
+  }
+
+  .answer-option {
+    font-size: 26px;
+    padding: 20px 24px;
+  }
+
+  .numeric-display {
+    font-size: 34px;
+    padding: 18px 24px;
+  }
+
+  .num-keypad {
+    max-width: 400px;
+    gap: 16px;
+    grid-template-columns: repeat(3, minmax(110px, 1fr));
+  }
+
+  .num-btn {
+    padding: 18px 0;
+    font-size: 22px;
+  }
+
+  .feedback,
+  .score,
+  .progress-text {
+    font-size: 20px;
+  }
+
+  #train-timer-bar {
+    max-width: 420px;
+  }
+
+  #heatmap-container {
+    padding: 24px 28px;
+  }
+
+  .metrics-card,
+  .goal-card {
+    padding: 22px 28px;
+  }
+
+  .metrics-card h3,
+  .goal-card h3 {
+    font-size: 22px;
   }
 }
 
