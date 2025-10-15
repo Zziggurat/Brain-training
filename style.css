@@ -31,6 +31,7 @@ body {
   color: var(--text-color);
   display: flex;
   justify-content: center;
+  min-height: 100vh;
 }
 
 .layout-chip {
@@ -327,12 +328,13 @@ button:disabled {
   }
 
   body {
-    align-items: flex-start;
-    padding: 48px 0 64px;
+    align-items: center;
+    padding: 64px 24px;
   }
 
   #app {
     max-width: 1180px;
+    width: 100%;
     margin: 0 auto;
   }
 
