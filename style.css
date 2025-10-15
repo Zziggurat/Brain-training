@@ -10,6 +10,7 @@
   --muted: #5a6b7b;
   --card-radius: 44px;
   --card-shadow: 0 24px 48px rgba(0, 0, 0, 0.16);
+  --layout-mode: mobile;
   font-size: 16px;
 }
 
@@ -30,6 +31,24 @@ body {
   color: var(--text-color);
   display: flex;
   justify-content: center;
+}
+
+.layout-chip {
+  position: fixed;
+  top: 16px;
+  left: 16px;
+  z-index: 1000;
+  padding: 8px 12px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: pre-line;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
 }
 
 #app {
@@ -302,168 +321,79 @@ button:disabled {
   overflow-y: auto;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
+  :root {
+    --layout-mode: desktop;
+  }
+
   body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #fdd835;
-    color: #2c3e50;
-    display: block;
+    align-items: flex-start;
+    padding: 48px 0 64px;
   }
 
   #app {
-    width: 100%;
-    max-width: 1280px;
-    min-height: 100vh;
+    max-width: 1180px;
     margin: 0 auto;
   }
 
   .screen {
-    padding: 48px 80px;
-  }
-
-  .screen.active {
-    display: block;
+    padding: 48px 64px;
   }
 
   #home-screen {
-    align-items: flex-start;
+    align-items: stretch;
   }
 
   .home-top-bar {
-    display: block;
-    height: 0;
-  }
-
-  #home-settings-btn {
-    position: absolute;
-    top: 48px;
-    left: 80px;
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: #ffffff;
-    color: #007aff;
-    font-size: 24px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  }
-
-  #home-progress-shortcut,
-  .home-bottom-actions {
-    display: none;
-  }
-
-  .round-icon-btn {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    background: #ffffff;
-    color: #007aff;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
   }
 
   .home-container {
     width: 100%;
-    max-width: 1120px;
-    margin: 48px 0 96px;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
     gap: 56px;
-    align-items: flex-start;
   }
 
   .home-card {
     max-width: 420px;
-    padding: 56px 40px;
-    border-radius: 36px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .home-card::after {
-    display: none;
-  }
-
-  #home-title {
-    font-size: 36px;
-    color: #2c3e50;
-  }
-
-  .operation-toggle {
-    background: rgba(0, 122, 255, 0.1);
-  }
-
-  .op-btn {
-    color: #007aff;
-  }
-
-  .op-btn.active {
-    background: #007aff;
-    color: #ffffff;
-    box-shadow: none;
-  }
-
-  #progress-wrapper {
-    background: #e0e0e0;
-    border-radius: 12px;
-    height: 30px;
-  }
-
-  #progress-fill {
-    background: #4caf50;
-    border-radius: 12px;
-  }
-
-  #progress-text {
-    color: #2c3e50;
-  }
-
-  .progress-label {
-    color: #2c3e50;
   }
 
   .home-bottom-row {
-    width: 100%;
-    max-width: 420px;
-    gap: 24px;
+    flex: 1 1 0%;
+    min-width: 0;
+    max-width: none;
+    width: auto;
+    flex-direction: row;
     align-items: stretch;
+    gap: 32px;
   }
 
   .home-buttons {
-    width: 100%;
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
-    margin: 0;
+    align-content: flex-start;
   }
 
   .home-buttons button {
-    padding: 18px 0;
     width: 100%;
-    max-width: none;
-    margin: 0;
-    font-size: 22px;
-    font-weight: 700;
-    border-radius: 28px;
-    background: #007aff;
-    color: #ffffff;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transform: none;
-  }
-
-  .home-buttons button:active {
-    transform: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
   #assistant-panel {
+    flex: 0 0 320px;
+    max-width: 360px;
     max-height: none;
-    background: #ffffff;
-    backdrop-filter: none;
-    border-radius: 32px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
-  .assistant-card {
-    background: transparent;
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    box-shadow: none;
-  }
-
-  .problem-card {
-    border-radius: 32px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  .home-bottom-actions {
+    display: none;
   }
 }
 
@@ -917,8 +847,3 @@ input[type="checkbox"] {
 }
 
 /* --- Adaptaciones responsivas --- */
-@media (min-width: 1024px) {
-  #assistant-panel {
-    max-height: none;
-  }
-}
