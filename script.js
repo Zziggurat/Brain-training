@@ -14,6 +14,34 @@ document.addEventListener('DOMContentLoaded', () => {
     progress: document.getElementById('progress-screen'),
   };
 
+  const layoutChip = document.getElementById('layout-chip');
+  const desktopMediaQuery = window.matchMedia('(min-width: 768px)');
+
+  function readLayoutMode() {
+    const mode = getComputedStyle(document.documentElement).getPropertyValue('--layout-mode');
+    return mode ? mode.trim() : '';
+  }
+
+  function updateLayoutChip() {
+    if (!layoutChip) {
+      return;
+    }
+    const width = Math.round(window.innerWidth);
+    const matchesDesktop = desktopMediaQuery.matches;
+    const mode = readLayoutMode() || 'mobile';
+    layoutChip.textContent = `innerWidth: ${width}\nmatch: ${matchesDesktop ? 'yes' : 'no'}\nmode: ${mode}`;
+  }
+
+  if (layoutChip) {
+    updateLayoutChip();
+    window.addEventListener('resize', updateLayoutChip);
+    if (typeof desktopMediaQuery.addEventListener === 'function') {
+      desktopMediaQuery.addEventListener('change', updateLayoutChip);
+    } else if (typeof desktopMediaQuery.addListener === 'function') {
+      desktopMediaQuery.addListener(updateLayoutChip);
+    }
+  }
+
   // Botones en la pantalla de inicio
   const homeSettingsBtn = document.getElementById('home-settings-btn');
   const homeLearnBtn = document.getElementById('home-learn-btn');

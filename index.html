@@ -9,7 +9,7 @@
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover"
   />
   <title>Brain training</title>
-  <link rel="stylesheet" href="style.css?v=r-20241026-1200" />
+  <link rel="stylesheet" href="style.css?v=r-layout-chip" />
 
   <!-- Manifesto y configuración para PWA -->
   <link rel="manifest" href="manifest.json" />
@@ -24,6 +24,8 @@
   <meta name="theme-color" content="#3498db" />
 </head>
 <body>
+  <div id="layout-chip" class="layout-chip" role="status" aria-live="polite"></div>
+
   <div id="app">
   <!-- Pantalla de inicio -->
   <div id="home-screen" class="screen active">
@@ -203,10 +205,10 @@
     <div id="result-card" class="result-card" aria-live="polite"></div>
   </div>
 
-  <footer class="version-tag" aria-label="Marcador de versión">r-desktop-on • v=r-20241026-1200</footer>
+  <footer class="version-tag" aria-label="Marcador de versión">r-layout-chip • v=r-layout-chip</footer>
 
   </div>
 
-  <script src="script.js?v=r-20241026-1200"></script>
+  <script src="script.js?v=r-layout-chip"></script>
 </body>
 </html>
