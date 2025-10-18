@@ -4,12 +4,12 @@
  * they never get stuck behind stale caches.
  */
 
-const CACHE_NAME = 'brain-training-v11';
+const CACHE_NAME = 'brain-training-v1514';
 const PRECACHE_ASSETS = [
   '/',
   'index.html',
   'manifest.json',
-  'script.js?r=20241102-1512'
+  'script.js?r=20241102-1514'
 ];
 
 self.addEventListener('install', (event) => {
